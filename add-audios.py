@@ -4,10 +4,11 @@ import pandas as pd
 if len(sys.argv) == 3:
     input_folder = sys.argv[1]
     output_folder = sys.argv[2]
-if len(sys.argv) == 1:
+elif len(sys.argv) == 1:
     input_folder = "custom-audios"
     output_folder = "script-test"
-else: sys.exit("Wrong number of argarguments. Please enter an input folder followed by an output folder.")
+else:
+    sys.exit(str(len(sys.argv))+" arguments present. Please enter an input folder followed by an output folder.")
 
 print("=============================================")
 print("Running script to add audios to the database.")
@@ -29,7 +30,9 @@ category_codes = {category:str(i) for i, category in enumerate(categories)}
 
 usr_id = "LL"
 
-# TODO open existing csv file (kitchen20.csv)
+df_k20 = pd.read_csv('kitchen20.csv').drop(columns=['Unnamed: 0','Unnamed: 0.1'])
+print(df_k20.head())
+
 # TODO check, with user_id if files are not already added
 
 audio_categories = sorted(os.listdir(input_dir), key=lambda item: int(category_codes[item]))
@@ -50,9 +53,9 @@ for audio in sorted(os.listdir(category_dir)):
     take = chr(int(p.findall(audio)[0])+64)
     fold = random.choice(folds)
     audio_name = str(fold-1)+'-'+usr_id+'-'+take+'-'+category_codes[audio_category]+'.wav'
-    print(audio_name)
-    output_path = os.path.join(output_dir, audio_name)
-    shutil.copyfile(audio_path, output_path)
+    # print(audio_name)
+    # output_path = os.path.join(output_dir, audio_name)
+    # shutil.copyfile(audio_path, output_path)
     line = pd.DataFrame([[audio_category,fold,id,os.path.join(output_folder,audio_name),take,category_codes[audio_category],usr_id]], columns=cols)
     df = df.append(line, ignore_index=True)
     id += 1
