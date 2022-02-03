@@ -7,8 +7,8 @@ import numpy as np
 import pandas as pd
 from os.path import join
 from torch.utils.data import Dataset, DataLoader
-from . import utils as U
-
+#from . import utils as U
+import utils as U
 
 package_dir, _ = os.path.split(os.path.abspath(__file__))
 dl_dir = os.path.join(package_dir, '..')
@@ -84,7 +84,7 @@ class Kitchen20(Dataset):
         return len(self.sounds)
 
     def get_db_folds(self):
-        full_db = np.load(self.db_path)
+        full_db = np.load(self.db_path, allow_pickle=True)
         self.sounds = []
         self.labels = []
         self.folds_nb = []
@@ -143,12 +143,12 @@ class Kitchen20(Dataset):
         # Create npz file
         print('Creating corresponding npz file...')
         kitchen20 = {}
-        for fold in range(1, 6):
+        for fold in range(1, 11):
             kitchen20['fold{}'.format(fold)] = {}
             kitchen20['fold{}'.format(fold)]['sounds'] = []
             kitchen20['fold{}'.format(fold)]['labels'] = []
 
-            for idx, row in self.df[self.df.fold == fold - 1].iterrows():
+            for idx, row in self.df[self.df.fold == fold].iterrows():
                 wav_file = row.path.replace('audio/', 'tmp/')
                 wav_file = join(self.root, wav_file)
                 sound = wavio.read(wav_file).data.T[0]
