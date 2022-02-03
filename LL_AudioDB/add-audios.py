@@ -47,7 +47,6 @@ if any(df['usr_id'] == usr_id):
     else:
         print("Continuing script.")
 
-
 categories = sorted(os.listdir(input_dir), key=lambda item: int(category_codes[item]))
 
 folds = [10]
