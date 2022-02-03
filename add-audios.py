@@ -83,6 +83,6 @@ for category in categories:
         df = df.append(line, ignore_index=True)
         id += 1
 
-df.to_csv('test.csv')
+df.to_csv('kitchen20b.csv')
 
 print("Audios added succesfully to database.")
