@@ -83,5 +83,4 @@ for category in categories:
         id += 1
 
 df.to_csv('kitchen20b.csv')
-
 print("Audios added succesfully to database.")
