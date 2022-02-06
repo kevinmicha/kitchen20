@@ -51,3 +51,15 @@ In a Python Enviornment with the adequate project dependencies, only the followi
 ```bash
 complete
 ```
+#### Add audios to database
+This implementations uses a simple database, consisting of a directory and a `.csv` metadata file. In order to update this database and include new audio files, we provide a Python script called `add-audios.py`. This takes the `.wav` files from an input folder (they must indicate the label in the name) and places them in an ouput folder, updating the metadata file as well.
+
+To call this script we use the following command in the corresponding directory:
+```bash
+python add-audios.py
+```
+This uses the default input and output directory names `custom-audios` and `audios`, we can use custom ones with the command:
+```bash
+python add-audios.py input-folder output-folder
+```
+The script prints the advancements and asks for a confirmation of this update.
