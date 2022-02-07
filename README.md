@@ -24,24 +24,21 @@ pip install requirements.txt
 
 ```
 
-│   README.md                                   # this file
-│   requirements.txt     
+├── README.md                                   # This file
+├── requirements.txt                            # Required packages
+├── PythonAudioClassification.ipynb             # Classification implementation notebook
+├── .gitignore                                  
 |
-├── audio                                       # all audio filies
-|   ├── 0-101477-B-3.wav
-|   ├── ...
-│   └── 9-LL-S-15.wav           
+├── LL_AudioDB                                  # Sound database
+|   ├── audio                                   # All audio files
+|   ├── custom-audios                           # Our recorded audio files
+│   └── metadata                                
+|       └── kitchen20b.csv                      # List of audios with metadata
+|   ├── add-audios.py                           # Script to add new audios to DB
+|   └── categories.txt                          # List of categories used by 'add-audios.py'
 |
-├── custom-audios                               # LivingLab recorded audio filies
-|   ├── boiling-water  
-|   ├── ...
-│   └── plates  
-|
-├── k20-old-model       
-│   ├── kitchen20                    
-│   ├──                     
-│   └──                               
-|                          
+├── Old-k20-model                               # First implementation of k20 model (unused)   |
+└── checkpoints                                 # Trained model checkpoints
 ```
 
 ### Execution 
