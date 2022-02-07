@@ -39,7 +39,7 @@ pip install requirements.txt
 |
 ├── k20-old-model       
 │   ├── kitchen20                    
-│   ├──                        
+│   ├──                     
 │   └──                               
 |                          
 ```
