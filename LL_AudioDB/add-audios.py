@@ -6,7 +6,7 @@ if len(sys.argv) == 3:
     output_folder = sys.argv[2]
 elif len(sys.argv) == 1:
     input_folder = "custom-audios"
-    output_folder = "script-test"
+    output_folder = "audio"
 else:
     sys.exit("Given "+str(len(sys.argv))+" arguments. Please, ONLY enter an input folder followed by an output folder.")
 
@@ -37,7 +37,7 @@ category_codes = {category:str(i) for i, category in enumerate(categories)}
 usr_id = "LL" # IDEA add date to differentiate new recordings of the same category
 # IDEA Prompt user in script to directly add id
 
-df = pd.read_csv('kitchen20.csv').drop(columns=['Unnamed: 0','Unnamed: 0.1'])
+df = pd.read_csv('metadata/kitchen20.csv').drop(columns=['Unnamed: 0','Unnamed: 0.1'])
 
 if any(df['usr_id'] == usr_id):
     print("There exists recordings by user '"+usr_id+"' in the database.")
@@ -82,5 +82,5 @@ for category in categories:
         df = df.append(line, ignore_index=True)
         id += 1
 
-df.to_csv('kitchen20b.csv')
+df.to_csv('metadata/kitchen20b.csv')
 print("Audios added succesfully to database.")
