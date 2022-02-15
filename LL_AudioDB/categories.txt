@@ -10,6 +10,15 @@ boiling-water
 juicer
 cupboard
 drawer
+window-blind
+tv
+trash
+sitting-and-moving
+radio
+plugging
+moving-furniture
+computer
+chatting
 clean-dishes
 book
 chopping
@@ -18,3 +27,4 @@ eat
 peel
 plates
 sweep
+
