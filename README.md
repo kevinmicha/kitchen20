@@ -32,8 +32,9 @@ pip install requirements.txt
 ├── LL_AudioDB                                  # Sound database
 |   ├── audio                                   # All audio files
 |   ├── custom-audios                           # Our recorded audio files
-│   └── metadata                                
-|       └── kitchen20b.csv                      # List of audios with metadata
+│   ├──  metadata                                
+|   │     ├── kitchen20b.csv                    # List of audio tracks 
+|   │     └── kitchen20.csv                     # DB format
 |   ├── add-audios.py                           # Script to add new audios to DB
 |   └── categories.txt                          # List of categories used by 'add-audios.py'
 |
