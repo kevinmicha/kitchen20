@@ -10,6 +10,14 @@ boiling-water
 juicer
 cupboard
 drawer
+clean-dishes
+book
+chopping
+cutlery
+eat
+peel
+plates
+sweep
 window-blind
 tv
 trash
@@ -19,12 +27,4 @@ plugging
 moving-furniture
 computer
 chatting
-clean-dishes
-book
-chopping
-cutlery
-eat
-peel
-plates
-sweep
 
