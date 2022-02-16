@@ -21,10 +21,7 @@ sweep
 window-blind
 tv
 trash
-sitting-and-moving
 radio
-plugging
 moving-furniture
-computer
 chatting
 
