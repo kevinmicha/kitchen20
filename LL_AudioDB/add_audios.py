@@ -41,8 +41,8 @@ df = pd.read_csv('metadata/kitchen20.csv').drop(columns=['Unnamed: 0','Unnamed: 
 
 if any(df['usr_id'] == usr_id):
     print("There exists recordings by user '"+usr_id+"' in the database.")
-    ans = input("Do you wish to continue? [yes/no] ")
-    if ans != 'yes' and ans != '' :
+    ans = input("Do you wish to continue? [y/n] ")
+    if ans != 'y' and ans != '':
         sys.exit("Exiting.")
     else:
         print("Continuing script.")

@@ -17,7 +17,7 @@ In order to be able to execute the following steps, you will need to create a Py
 This can be done by:
 
 ```bash
-pip install requirements.txt
+pip install -r requirements.txt
 ```
 
 ### Directory Structure
@@ -54,10 +54,10 @@ This implementations uses a simple database, consisting of a directory and a `.c
 
 To call this script we use the following command in the corresponding directory:
 ```bash
-python add-audios.py
+python add_audios.py
 ```
 This uses the default input and output directory names `custom-audios` and `audios`, we can use custom ones with the command:
 ```bash
-python add-audios.py input-folder output-folder
+python add_audios.py input-folder output-folder
 ```
 The script prints the advancements and asks for a confirmation of this update.
