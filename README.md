@@ -26,7 +26,9 @@ pip install -r requirements.txt
 
 ├── README.md                                   # This file
 ├── requirements.txt                            # Required packages
-├── PythonAudioClassification.ipynb             # Classification implementation notebook
+├── PythonAudioClassification.ipynb             # Classification implementation notebook, to train and test
+├── AudioClassifier.py                          # Module to store defined functions and classes
+├── test_audios.py                              # Simple testing script to classify a single audio file
 ├── .gitignore                                  
 |
 ├── LL_AudioDB                                  # Sound database
@@ -35,22 +37,33 @@ pip install -r requirements.txt
 │   ├──  metadata                                
 |   │     ├── kitchen20b.csv                    # List of audio tracks 
 |   │     └── kitchen20.csv                     # DB format
-|   ├── add-audios.py                           # Script to add new audios to DB
+|   ├── add_audios.py                           # Script to add new audios to DB
 |   └── categories.txt                          # List of categories used by 'add-audios.py'
 |
 ├── Old-k20-model                               # First implementation of k20 model (unused)   |
 └── checkpoints                                 # Trained model checkpoints
 ```
 
-### Execution 
+### Utilization guide
+#### Python notebook
+To train the model or bulk test audios we can use the notebook `PythonAudioClassification.ipynb`, whose use is straight-forward and requires simply running each command, with the option of loading the pre-trained model.
 
-In a Python Enviornment with the adequate project dependencies, only the following line has to be written:
+#### Test audios 
+If you want to simply test one audio file, a testing script called `test_audios.py` is available. To used this, simply type the following command
 
 ```bash
-complete
+python test_audios.py input_audio.wav
 ```
+
+An exemplary output would be the following:
+
+```bash
+Testing audio 'input_audio.wav'
+Predicted label is 'trash'
+```
+
 #### Add audios to database
-This implementations uses a simple database, consisting of a directory and a `.csv` metadata file. In order to update this database and include new audio files, we provide a Python script called `add-audios.py`. This takes the `.wav` files from an input folder (they must indicate the label in the name) and places them in an ouput folder, updating the metadata file as well.
+This implementations uses a simple database, consisting of a directory and a `.csv` metadata file. In order to update this database and include new audio files, we provide a Python script called `add_audios.py`. This takes the `.wav` files from an input folder (they must indicate the label in the name) and places them in an ouput folder, updating the metadata file as well.
 
 To call this script we use the following command in the corresponding directory:
 ```bash
